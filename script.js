@@ -10,3 +10,6 @@ document.getElementById('userPlay').innerHTML = console.log(userChoice)
 
 let userScore = 0
 let compScore = 0
+
+let userPlay = `<img src="imgs/${valChoice}.png"><br><p>You played ${userChoice}!</p>`
+let compPlay = `<img src="imgs/${valChoice}.png"><br><p>You played ${compChoice}!</p>`
