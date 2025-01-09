@@ -7,3 +7,6 @@ document.getElementById('greet').innerHTML = greetingText
 let userChoice = document.getElementById('usersPick')
 
 document.getElementById('userPlay').innerHTML = console.log(userChoice)
+
+let userScore = 0
+let compScore = 0
