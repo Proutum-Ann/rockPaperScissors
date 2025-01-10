@@ -13,3 +13,6 @@ let compScore = 0
 
 let userPlay = `<img src="imgs/${valChoice}.png"><br><p>You played ${userChoice}!</p>`
 let compPlay = `<img src="imgs/${valChoice}.png"><br><p>You played ${compChoice}!</p>`
+
+document.getElementById('userScore').innerHTML = console.log(userScore)
+document.getElementById('compScore').innerHTML = console.log(compScore)
