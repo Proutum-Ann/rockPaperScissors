@@ -1,3 +1,8 @@
 body {
     background-image: url('img.here');
 }
+
+.playimage {
+    max-height: 500px;
+    align-content: bottom;
+}
