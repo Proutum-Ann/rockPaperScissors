@@ -27,15 +27,15 @@
         </header>
         <main>
             <!-- Greeting Text -->
-            <div class="col-md-5 col-12 mx-md-auto mx-4 py-2 px-3 text-center" style="background-color: blue" id="greet">
+            <div class="col-md-5 col-12 mx-md-auto mx-4 py-2 px-3 text-center" id="greet">
                 
             </div>
 
             <!-- Choices -->
             <div class="row justify-content-between px-3" id="usersPick">
-                <div class="col-md-3 col-6 btn" value="rock">Rock</div>
-                <div class="col-md-3 col-6 btn" value="paper">Paper</div>
-                <div class="col-md-3 col-12 btn" value="scissors">Scissors</div>
+                <button class="col-md-3 col-6 btn rock" value="rock" onclick="playGame()">Rock</button>
+                <button class="col-md-3 col-6 btn paper" value="paper" onclick="playGame()">Paper</button>
+                <button class="col-md-3 col-12 scissors" value="scissors" onclick="playGame()">Scissors</button>
             </div>
 
             <!-- Play -->
@@ -43,7 +43,7 @@
                 <div class="row text-center">
                     <!-- User -->
                     <div class="col-md-5 col-10" id="userPlay">
-                        <img class="playimage" src="imgs/boom.png">
+
                     </div>
 
                     <!-- VS -->
@@ -53,14 +53,17 @@
 
                     <!-- Computer -->
                     <div class="col-md-5 col-10" id="compPlay">
-                        <img class="playimage" src="imgs/rock.png">
+                        
                     </div>
                 </div>
+            </div>
+            <div class="row" id="results">
+
             </div>
         </main>
         <footer>
             <!-- Scores -->
-             <div class="row text-center m-3 bg-primary">
+             <div class="row text-center m-3 playerscores">
                 <!-- User -->
                 <div class="col-5" id="userScore">
 

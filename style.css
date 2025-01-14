@@ -1,8 +1,13 @@
 body {
-    background-image: url('img.here');
+    background-color: #0d0616;
 }
 
 .playimage {
     max-height: 500px;
     align-content: bottom;
+}
+
+#greet, .playerscores {
+    background-color:#f3eaff;
+    border-radius: 20px;
 }
