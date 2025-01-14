@@ -13,7 +13,7 @@ function getComputerChoice() {
 }
 
 let computerChoice = getComputerChoice();
-let userChoice = document.getElementById('userPlay').value
+let userChoice = document.getElementById('usersPick').value
 
 const determineWinner = (userChoice, computerChoice) => {
   console.log(userChoice, computerChoice);

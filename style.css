@@ -9,5 +9,22 @@ body {
 
 #greet, .playerscores {
     background-color:#f3eaff;
+    color: #0d0616;
     border-radius: 20px;
+}
+
+button {
+    background-color:#f3eaff !important;
+    color: #391b61 !important;
+    border-radius: 20px !important;
+    border: 1px double #391b61 !important;
+    transition: .5s !important;
+}
+
+button:hover {
+    background-color:#e8d6ff !important;
+    color: #7134c0 !important;
+    border-radius: 10px !important;
+    border: 2px double #7134c0 !important;
+    box-shadow: #f3eaff 0px 0px 20px !important;
 }
