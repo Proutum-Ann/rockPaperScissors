@@ -63,7 +63,7 @@ if (userChoice === 'rock') {
 
 document.getElementById('userPlay').innerHTML = userChoiceImg
 
-document.getElementById('results').innerHTML = console.log(determineWinner(userChoice, computerChoice))
+document.getElementById('results').innerHTML = determineWinner(userChoice, computerChoice)
 
 function computerWon(){
 
