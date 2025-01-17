@@ -15,33 +15,43 @@ function getComputerChoice() {
 let computerChoice = getComputerChoice();
 let userChoice = document.getElementById('usersPick').value
 
+let resultPoints = ''
+
 const determineWinner = (userChoice, computerChoice) => {
   console.log(userChoice, computerChoice);
 
   if (userChoice === computerChoice) {
+    pointResults = "tie"
     return console.log("It's a tie!");
   } else {
     if (userChoice === "rock") {
       if (computerChoice === "paper") {
+        pointResults = "loss"
         return console.log("You lost!");
       } else {
+        pointResults = "win"
         return console.log("You won!");
       }
     }
     else if (userChoice === "paper"){
       if (computerChoice === "scissors"){
+        pointResults = "loss"
         return console.log("You lost!")
       } else {
+        pointResults = "win"
         return console.log("You won!")
       }
     }
     else if (userChoice === "scissors"){
       if (computerChoice === "rock"){
+        pointResults = "loss"
         return console.log("You lost!")
       } else {
+        pointResults = "win"
         return console.log("You won!")
       }
     } else if (userChoice === "bomb"){
+      pointResults = "win"
       return console.log("You won!")
     } else {
       return console.log("Sorry, there was an issue in processing the results.")
@@ -65,13 +75,22 @@ document.getElementById('userPlay').innerHTML = userChoiceImg
 
 document.getElementById('results').innerHTML = determineWinner(userChoice, computerChoice)
 
-function computerWon(){
-
-}
-
 const playGame = (userChoice) =>{
   computerChoice = getComputerChoice();
   console.log(userChoice)
   console.log(computerChoice)
   determineWinner(userChoice, computerChoice);
+}
+
+let compPoints = 0
+let userPoints = 0
+
+const points = (pointResults) => {
+  if (pointResults === "win") {
+    userPoints += 1
+    return userPoints
+  } else if (pointResults === "loss") {
+    compPoints += 1
+    return compPoints
+  }
 }
