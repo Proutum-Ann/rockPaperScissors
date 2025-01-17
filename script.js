@@ -15,6 +15,18 @@ function getComputerChoice() {
 let computerChoice = getComputerChoice();
 let userChoice = document.getElementById('usersPick').value
 
+let userChoiceImg = ''
+
+if (userChoice === 'rock') {
+  userChoiceImg = '<img src="imgs/rock.png" class="playimage">';
+} else if (userChoice === 'paper') {
+  userChoiceImg = '<img src="imgs/paper.webp" class="playimage">';
+} else if (userChoice === 'scissors') {
+  userChoiceImg = '<img src="imgs/scissors.webp" class="playimage">';
+} else if (userChoice === 'bomb') {
+  userChoiceImg = '<img src="imgs/boom.png" class="playimage">';
+}
+
 let resultPoints = ''
 
 const determineWinner = (userChoice, computerChoice) => {
@@ -57,18 +69,6 @@ const determineWinner = (userChoice, computerChoice) => {
       return console.log("Sorry, there was an issue in processing the results.")
     }
   }
-}
-
-let userChoiceImg = ''
-
-if (userChoice === 'rock') {
-  userChoiceImg = '<img src="imgs/rock.png" class="playimage">';
-} else if (userChoice === 'paper') {
-  userChoiceImg = '<img src="imgs/paper.webp" class="playimage">';
-} else if (userChoice === 'scissors') {
-  userChoiceImg = '<img src="imgs/scissors.webp" class="playimage">';
-} else if (userChoice === 'bomb') {
-  userChoiceImg = '<img src="imgs/boom.png" class="playimage">';
 }
 
 let compPoints = 0
