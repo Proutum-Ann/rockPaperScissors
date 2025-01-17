@@ -27,8 +27,6 @@ if (userChoice === 'rock') {
   userChoiceImg = '<img src="imgs/boom.png" class="playimage">';
 }
 
-document.getElementById('userPlay').innerHTML = `${userChoiceImg}`
-
 let resultPoints = ''
 
 const determineWinner = (userChoice, computerChoice) => {
@@ -86,10 +84,10 @@ function points(pointResults) {
   }
 }
 
-document.getElementById('userScore').innerHTML = userPoints
-document.getElementById('compScore').innerHTML = compPoints
+document.getElementById('userScore').innerHTML = `${userPoints}`
+document.getElementById('compScore').innerHTML = `${compPoints}`
 
-document.getElementById('userPlay').innerHTML = userChoiceImg
+document.getElementById('userPlay').innerHTML = `${userChoiceImg}`
 
 document.getElementById('results').innerHTML = determineWinner(userChoice, computerChoice)
 
