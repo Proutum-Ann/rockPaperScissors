@@ -27,6 +27,8 @@ if (userChoice === 'rock') {
   userChoiceImg = '<img src="imgs/boom.png" class="playimage">';
 }
 
+document.getElementById('userPlay').innerHTML = `${userChoiceImg}`
+
 let resultPoints = ''
 
 const determineWinner = (userChoice, computerChoice) => {
