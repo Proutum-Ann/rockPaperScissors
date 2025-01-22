@@ -100,3 +100,11 @@ const playGame = (userChoice) =>{
   console.log(computerChoice)
   determineWinner(userChoice, computerChoice);
 }
+
+const bestOfThree = (userPoints, compPoints) => {
+  if (userPoints === 3) {
+    alert(`Good game, ${userName}!`)
+  } else if (compPoints === 3) {
+    alert('Everyone loses every once in a while!')
+  }
+}
