@@ -30,7 +30,7 @@ if (userChoice === 'rock') {
 }
 
 //scoring
-let resultPoints = ''
+let pointResults = ''
 
 const determineWinner = (userChoice, computerChoice) => {
   console.log(userChoice, computerChoice);
