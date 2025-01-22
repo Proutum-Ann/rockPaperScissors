@@ -1,6 +1,7 @@
 const userName = prompt("Hello! Have we met before? What's your name?")
 document.getElementById('greet').innerHTML = `<p>Hi ${userName}! I won't be going easy on you!</p>`
 
+// Computer's choice
 function getComputerChoice() {
   randomNumber = Math.floor(Math.random() * 3);
   if (randomNumber === 0) {
@@ -13,8 +14,9 @@ function getComputerChoice() {
 }
 
 let computerChoice = getComputerChoice();
-let userChoice = document.getElementById('usersPick').value
+const userChoice = document.getElementById('usersPick').value
 
+//images
 let userChoiceImg = ''
 
 if (userChoice === 'rock') {
@@ -27,6 +29,7 @@ if (userChoice === 'rock') {
   userChoiceImg = '<img src="imgs/boom.png" class="playimage">';
 }
 
+//scoring
 let resultPoints = ''
 
 const determineWinner = (userChoice, computerChoice) => {
