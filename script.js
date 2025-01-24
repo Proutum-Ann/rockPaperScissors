@@ -79,11 +79,11 @@ let userPoints = 0
 
 function points(pointResults) {
   if (pointResults === "win") {
-    userPoints++
-    return userPoints
+    userSum = userPoints++
+    return userSum
   } else if (pointResults === "loss") {
-    compPoints++
-    return compPoints
+    compSum = compPoints++
+    return compSum
   }
 }
 
@@ -99,6 +99,8 @@ const playGame = (userChoice) =>{
   console.log(userChoice)
   console.log(computerChoice)
   determineWinner(userChoice, computerChoice);
+  console.log(userPoints)
+  console.log(compPoints)
 }
 
 const bestOfThree = (userPoints, compPoints) => {
