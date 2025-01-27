@@ -19,6 +19,19 @@ function getComputerChoice() {
 let computerChoice = getComputerChoice();
 let userChoice = document.getElementById('usersPick').value
 
+//images
+let userChoiceImg = ''
+
+if (userChoice === 'rock') {
+  userChoiceImg = '<img src="imgs/rock.png" class="playimage">';
+} else if (userChoice === 'paper') {
+  userChoiceImg = '<img src="imgs/paper.png" class="playimage">';
+} else if (userChoice === 'scissors') {
+  userChoiceImg = '<img src="imgs/scissors.png" class="playimage">';
+} else if (userChoice === 'bomb') {
+  userChoiceImg = '<img src="imgs/boom.png" class="playimage">';
+}
+
 //scoring
 let pointResults = ''
 
@@ -79,19 +92,6 @@ function points(pointResults) {
   } else if (pointResults === "loss") {
     return compPoints
   }
-}
-
-//images
-let userChoiceImg = ''
-
-if (userChoice === 'rock') {
-  userChoiceImg = '<img src="imgs/rock.png" class="playimage">';
-} else if (userChoice === 'paper') {
-  userChoiceImg = '<img src="imgs/paper.png" class="playimage">';
-} else if (userChoice === 'scissors') {
-  userChoiceImg = '<img src="imgs/scissors.png" class="playimage">';
-} else if (userChoice === 'bomb') {
-  userChoiceImg = '<img src="imgs/boom.png" class="playimage">';
 }
 
 console.log(userChoiceImg)
