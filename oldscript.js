@@ -5,13 +5,10 @@ document.getElementById('greet').innerHTML = `<p>Hi ${userName}! I won't be goin
 function getComputerChoice() {
   randomNumber = Math.floor(Math.random() * 3);
   if (randomNumber === 0) {
-    document.getElementById('compPlay').src = 'imgs/rock.png'
     return "rock";
   } else if (randomNumber === 1) {
-    document.getElementById('compPlay').src = 'imgs/paper.png'
     return "paper";
   } else if (randomNumber === 2) {
-    document.getElementById('compPlay').src = 'imgs/scissors.png'
     return "scissors";
   }
 }
@@ -23,38 +20,33 @@ let userChoice = document.getElementById('usersPick').value
 let pointResults = ''
 
 const determineWinner = (userChoice, computerChoice) => {
+  console.log(userChoice, computerChoice);
 
   if (userChoice === computerChoice) {
     pointResults = "tie"
-
     return console.log("It's a tie!");
   } else {
     if (userChoice === "rock") {
       if (computerChoice === "paper") {
         pointResults = "loss"
-        compPoints++
         return console.log("You lost!");
       } else {
         pointResults = "win"
-        userPoints++
         return console.log("You won!");
       }
     }
     else if (userChoice === "paper"){
       if (computerChoice === "scissors"){
         pointResults = "loss"
-        compPoints++
         return console.log("You lost!")
       } else {
         pointResults = "win"
-        userPoints++
         return console.log("You won!")
       }
     }
     else if (userChoice === "scissors"){
       if (computerChoice === "rock"){
         pointResults = "loss"
-        compPoints++
         return console.log("You lost!")
       } else {
         pointResults = "win"
@@ -62,7 +54,6 @@ const determineWinner = (userChoice, computerChoice) => {
       }
     } else if (userChoice === "bomb"){
       pointResults = "win"
-      userPoints++
       return console.log("You won!")
     } else {
       return console.log("Sorry, there was an issue in processing the results.")
@@ -75,9 +66,11 @@ let userPoints = 0
 
 function points(pointResults) {
   if (pointResults === "win") {
-    return userPoints
+    userSum = userPoints++
+    return userSum
   } else if (pointResults === "loss") {
-    return compPoints
+    compSum = compPoints++
+    return compSum
   }
 }
 
@@ -98,8 +91,8 @@ console.log(userChoiceImg)
 
 document.getElementById('userPlay').innerHTML = userChoiceImg
 
-document.getElementById('userScore').innerHTML = `<p>${userPoints}</p>`
-document.getElementById('compScore').innerHTML = `<p>${compPoints}</p>`
+document.getElementById('userScore').innerHTML = `${userPoints}`
+document.getElementById('compScore').innerHTML = `${compPoints}`
 
 document.getElementById('results').innerHTML = determineWinner(userChoice, computerChoice)
 
