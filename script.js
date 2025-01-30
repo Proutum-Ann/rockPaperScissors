@@ -34,7 +34,13 @@ function getUserImages(userChoice) {
 //scoring
 let pointResults = ''
 
+let compPoints = 0
+let userPoints = 0
+
 const determineWinner = (userChoice, computerChoice) => {
+  
+  document.getElementById('userScore').innerHTML = `<p>${userPoints}</p>`
+  document.getElementById('compScore').innerHTML = `<p>${compPoints}</p>`
 
   if (userChoice === computerChoice) {
     pointResults = "tie"
@@ -82,19 +88,15 @@ const determineWinner = (userChoice, computerChoice) => {
   }
 }
 
-let compPoints = 0
-let userPoints = 0
-
-function points(pointResults) {
-  if (pointResults === "win") {
-    return userPoints
-  } else if (pointResults === "loss") {
-    return compPoints
+const bestOfThree = (userPoints, compPoints) => {
+  if (userPoints === 3) {
+    userRound++
+    alert(`Good game, ${userName}!`)
+  } else if (compPoints === 3) {
+    compRound++
+    alert('Everyone loses every once in a while!')
   }
 }
-
-document.getElementById('userScore').innerHTML = `<p>${userPoints}</p>`
-document.getElementById('compScore').innerHTML = `<p>${compPoints}</p>`
 
 document.getElementById('results').innerHTML = determineWinner(userChoice, computerChoice)
 
@@ -108,10 +110,10 @@ const playGame = (userChoice) =>{
   getUserImages(userChoice)
 }
 
-const bestOfThree = (userPoints, compPoints) => {
-  if (userPoints === 3) {
-    alert(`Good game, ${userName}!`)
-  } else if (compPoints === 3) {
-    alert('Everyone loses every once in a while!')
+function points(pointResults) {
+  if (pointResults === "win") {
+    return userPoints
+  } else if (pointResults === "loss") {
+    return compPoints
   }
 }
