@@ -20,16 +20,15 @@ let computerChoice = getComputerChoice();
 let userChoice = document.getElementById('usersPick').value
 
 //images
-let userChoiceImg = ''
 
-if (userChoice === 'rock') {
-  userChoiceImg = '<img src="imgs/rock.png" class="playimage">';
-} else if (userChoice === 'paper') {
-  userChoiceImg = '<img src="imgs/paper.png" class="playimage">';
-} else if (userChoice === 'scissors') {
-  userChoiceImg = '<img src="imgs/scissors.png" class="playimage">';
-} else if (userChoice === 'bomb') {
-  userChoiceImg = '<img src="imgs/boom.png" class="playimage">';
+function getUserImages(userChoice) {
+  if (userChoice === 'rock') {
+    document.getElementById('userPlay').src = 'imgs/rock.png'
+  } else if (userChoice === 'paper') {
+    document.getElementById('userPlay').src = 'imgs/paper.png'
+  } else if (userChoice === 'scissors') {
+    document.getElementById('userPlay').src = 'imgs/scissors.png'
+  }
 }
 
 //scoring
@@ -94,10 +93,6 @@ function points(pointResults) {
   }
 }
 
-console.log(userChoiceImg)
-
-document.getElementById('userPlay').innerHTML = userChoiceImg
-
 document.getElementById('userScore').innerHTML = `<p>${userPoints}</p>`
 document.getElementById('compScore').innerHTML = `<p>${compPoints}</p>`
 
@@ -110,6 +105,7 @@ const playGame = (userChoice) =>{
   determineWinner(userChoice, computerChoice);
   console.log(userPoints)
   console.log(compPoints)
+  getUserImages(userChoice)
 }
 
 const bestOfThree = (userPoints, compPoints) => {
