@@ -1,5 +1,7 @@
 body {
     background-color: #0d0616;
+    color: #0d0616; 
+    overflow-x: hidden;
 }
 
 .playimage {
@@ -7,7 +9,7 @@ body {
     align-content: bottom;
 }
 
-#greet, .playerscores {
+#greet, .playerscores, #results {
     background-color:#f3eaff;
     color: #0d0616;
     border-radius: 20px;
@@ -27,4 +29,13 @@ button:hover {
     border-radius: 10px !important;
     border: 2px double #7134c0 !important;
     box-shadow: #f3eaff 0px 0px 20px !important;
+}
+
+.versus {
+    padding-top: 50%;
+    padding-bottom: 50%;
+}
+
+h1, .versus {
+    color: white
 }

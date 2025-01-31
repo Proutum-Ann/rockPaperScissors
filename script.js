@@ -38,10 +38,13 @@ let computerChoice = getComputerChoice();
 let pointResults = ''
 
 function bestOfThree(userPoints, compPoints){
+
   if (userPoints === 3 && compPoints < 3) {
-    alert(`Good game, ${userName}! If you want to play again, refresh the page!`)
+  document.getElementById('results').innerHTML = `<center>Congratulations, ${userName}, you won!<br><button onClick="window.location.reload();">Play Again!</button></center>`
   } else if (compPoints === 3 && userPoints < 3) {
-    alert('Everyone loses every once in a while! If you want to try again, refresh the page!')
+  document.getElementById('results').innerHTML = `<center>How did you lose to a computer??????<br><button onClick="window.location.reload();">Try Again</button></center>`
+  } else if (compPoints < 3 && userPoints < 3){
+  document.getElementById('results').innerHTML = `<center>Play and determine the winner!</center>`
   }
 }
 
@@ -99,23 +102,13 @@ const determineWinner = (userChoice, computerChoice) => {
   }
 }
 
-
-document.getElementById('results').innerHTML = determineWinner(userChoice, computerChoice)
-
 const playGame = (userChoice) =>{
-  computerChoice = getComputerChoice();
   console.log(userChoice)
+  getUserImages(userChoice)
+  computerChoice = getComputerChoice();
   console.log(computerChoice)
   determineWinner(userChoice, computerChoice);
   console.log(userPoints)
   console.log(compPoints)
-  getUserImages(userChoice)
-}
-
-function points(pointResults) {
-  if (pointResults === "win") {
-    return userPoints
-  } else if (pointResults === "loss") {
-    return compPoints
-  }
+  bestOfThree(userPoints, compPoints)
 }
