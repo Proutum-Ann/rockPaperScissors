@@ -2,13 +2,19 @@ body {
     background-color: #0d0616;
     color: #0d0616; 
     overflow-x: hidden;
+    padding-top:  2%;
+    font-family: "basic-sans", sans-serif;
+    font-weight: 400;
+    font-style: normal;
 }
 
+/* image */
 .playimage {
     max-height: 500px;
     align-content: bottom;
 }
 
+/* bg/buttons and text styling */
 #greet, .playerscores, #results {
     background-color:#f3eaff;
     color: #0d0616;
@@ -36,6 +42,10 @@ button:hover {
     padding-bottom: 50%;
 }
 
-h1, .versus {
-    color: white
+h1 {
+    color: white;
+    font-family: "blakely", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    font-size: 60px;
 }
